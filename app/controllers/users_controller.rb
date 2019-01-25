@@ -20,10 +20,17 @@ class UsersController < ApplicationController
   end
   
   post '/users' do 
+    if params[:name] !='' && params[:email] !='' && params[:password] !=''
+      @user = User.create(params)
+      redirect '/users/#{@user.id}'
+    else
+      #Need to finish logic here
+    end
   end
   
   get '/users/:id' do
-    "This will be the users show route"
+    @user = User.find_by(id: params[:id])
+    erb :'/users/show'
   end
   
 end
