@@ -5,7 +5,14 @@ class UsersController < ApplicationController
   end
   
   post '/login' do
-    binding.pry
+    @user = User.find_by(email: params[:email])
+    if @user.authenticate(params[:password])
+      #log user in (create session)
+      #redirect to user's landing page
+    else 
+      #tell user they entered invalid credentials
+      #Redirect to login page
+    end
   end
   
   get '/signup' do 
