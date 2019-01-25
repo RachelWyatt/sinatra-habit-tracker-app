@@ -13,7 +13,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: #B4DFE5;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -120,7 +120,7 @@ input {
 }
 
 input[type=button], input[type=submit], input[type=reset] {
-  background-color: #B4DFE5;
+  background-color: #f4976c;
   border: none;
   color: white;
   padding: 16px 32px;
