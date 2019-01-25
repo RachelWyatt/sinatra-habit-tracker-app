@@ -7,16 +7,20 @@ class UsersController < ApplicationController
   post '/login' do
     @user = User.find_by(email: params[:email])
     if @user.authenticate(params[:password])
-      #log user in (create session)
-      #redirect to user's landing page
+      session[:user_id] = @user.id 
+      redirect '/users/#{@user.id}'
     else 
-      #tell user they entered invalid credentials
+      "Invalid credentials"
       #Redirect to login page
     end
   end
   
   get '/signup' do 
     erb :signup
+  end
+  
+  get '/users/:id' do
+    "This will be the users show route"
   end
   
 end
