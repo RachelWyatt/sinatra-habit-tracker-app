@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user.authenticate(params[:password])
       session[:user_id] = @user.id 
-      redirect '/users/#{@user.id}'
+      redirect "/users/#{@user.id}"
     else 
       "Invalid credentials"
       #Redirect to login page
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if params[:name] !='' && params[:email] !='' && params[:password] !=''
       @user = User.create(params)
       session[:user_id] = @user.id 
-      redirect '/users/#{@user.id}'
+      redirect "/users/#{@user.id}"
     else
       redirect '/signup'
     end
