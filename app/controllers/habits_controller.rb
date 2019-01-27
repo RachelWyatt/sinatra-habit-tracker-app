@@ -16,8 +16,10 @@ class HabitsController < ApplicationController
     end
   end
   
-  
-  #show route for one habit 
+  get "/habits/:id" do
+    @habit = Habit.find(params)
+    erb :'habits/show'
+  end
   
   #index route for all habits
   
