@@ -55,6 +55,16 @@ class HabitsController < ApplicationController
     end
   end
   
+  delete '/habit/:id' do 
+    find_habit
+    if habit.user == current_user 
+      @habit.destroy
+      redirect "/habits"
+    else 
+      redirect "/habits"
+    end
+  end
+  
   def find_habit
     @habit = Habit.find(params[:id])
   end 
