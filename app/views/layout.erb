@@ -16,8 +16,10 @@
   <body>
     
     <div class="nav">
+      <% if logged_in? %>
       <a href="/logout">Log Out</a>
       <a href="/habits/new">Start a New Habit</a>
+      <%end%>
     </div>
     <div class="wrapper">
 
