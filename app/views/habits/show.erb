@@ -4,5 +4,8 @@
 
 <% if current_user == @journal.entry.user %>
   <a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
-
+  <form action="/habits<%=@habit.id%>" method="post">
+  <input type="hidden" name="_method" value="Delete">
+  <input type="submit" name='' value="Delete this Entry."> 
+  </form>
 <% end %>
