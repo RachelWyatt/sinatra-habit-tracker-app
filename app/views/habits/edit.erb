@@ -1,1 +1,11 @@
 <h1>Edit Your Habit:</h1>
+
+
+
+<form action="/habits/<%=@habit.id%>" method="post">
+<input type="hidden" name="_method" value="patch">
+<label for="description">Description:</label>
+<input type="text" name="description" value="<%=@habit.description%>"> <br>
+
+<input type="submit" value="Edit"> 
+</form>
