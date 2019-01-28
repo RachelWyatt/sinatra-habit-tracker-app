@@ -23,4 +23,8 @@ class HabitsController < ApplicationController
   
   #index route for all habits
   
+  get "/habits/:id/edit" do 
+    erb :"/habits/edit"
+  end
+  
 end
