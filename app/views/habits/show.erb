@@ -2,4 +2,7 @@
 
 <%=@habit.description%>
 
-<a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
+<% if current_user == @journal.entry.user %>
+  <a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
+
+<% end %>
