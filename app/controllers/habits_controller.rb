@@ -44,7 +44,7 @@ class HabitsController < ApplicationController
   patch "/habits/:id" do
     find_habit
     if logged_in?
-      if @habit.user == current_user
+      if @habit.user == current_user && params[:description] != ''
         @habit.update(id: params[:id], description: params[:description])
         redirect to "/habit/#{@habit.id}"
       else 
