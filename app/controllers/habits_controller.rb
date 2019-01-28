@@ -25,13 +25,29 @@ class HabitsController < ApplicationController
   
   get "/habits/:id/edit" do 
     find_habit
-    erb :"/habits/edit"
+    if logged_in?
+      if @habit.user == current_user
+        erb :"/habits/edit"
+      else 
+        redirect "users/#{current_user.id}"
+      end
+    else 
+      redirect '/'
+    end
   end
   
   patch "/habits/:id" do
     find_habit
-    @habit.update(id: params[:id], description: params[:description])
-    redirect to "/habit/#{@habit.id}"
+    if logged_in?
+      if @habit.user == current_user
+        @habit.update(id: params[:id], description: params[:description])
+        redirect to "/habit/#{@habit.id}"
+      else 
+        redirect "users/#{current_user.id}"
+      end 
+    else 
+      redirect '/'
+    end
   end
   
   def find_habit
