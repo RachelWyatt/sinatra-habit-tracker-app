@@ -1,2 +1,11 @@
 <h1>User Show Page</h1>
 <h1>Welcome, <%=@user.name%>.</h1>
+
+<h2>What have you been up to recently?</h2>
+<h4><% @habits.each do |habit| %></h4>
+  <p><a href="/habit/<%=habit.id%>"> <%=habit.description%> </a></p>
+  <br>
+<% end %>
+
+<h2>Or get started on something new:</h2>
+<a href="/habits/new">Start a New Habit</a>
