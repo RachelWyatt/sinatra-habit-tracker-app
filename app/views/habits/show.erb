@@ -2,7 +2,7 @@
 
 <%=@habit.description%>
 
-<% if current_user == @journal.entry.user %>
+<% if current_user == @habit.user %>
   <a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
   <form action="/habits<%=@habit.id%>" method="post">
   <input type="hidden" name="_method" value="Delete">
