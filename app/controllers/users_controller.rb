@@ -31,6 +31,8 @@ class UsersController < ApplicationController
   
   get '/users/:id' do
     @user = User.find_by(id: params[:id])
+    @habits = Habit.all
+    #how to update so this only shows habits owned by the user who is logged in?
     erb :'/users/show'
   end
   
