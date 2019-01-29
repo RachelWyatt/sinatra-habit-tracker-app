@@ -57,9 +57,9 @@ class HabitsController < ApplicationController
   
   delete '/habit/:id' do 
     find_habit
-    if habit.user == current_user 
+    if current_user == @habit.user 
       @habit.destroy
-      redirect "/habits"
+      redirect "/"
     else 
       redirect "/habits"
     end
