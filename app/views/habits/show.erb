@@ -2,8 +2,11 @@
 
 <%=@habit.description%>
 
-<%=@day.day%>
-#need to update to iterate over multiple days
+<% if @day %>
+  <%=@day.day%>
+<%else%>
+  <h3>Looks like this habit isn't being tracked yet!</h3>
+<%end%>
 
 <% if current_user == @habit.user %>
   <a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>

@@ -48,7 +48,7 @@ class HabitsController < ApplicationController
     if logged_in?
       if @habit.user == current_user && params[:description] != ''
         @habit.update(id: params[:id], description: params[:description])
-        @day.update(day: params[:day], habit_id: @habit.id)
+        @day.create(day: params[:day], habit_id: @habit.id)
         redirect to "/habit/#{@habit.id}"
       else 
         redirect "users/#{current_user.id}"
