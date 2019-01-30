@@ -1,16 +1,17 @@
-<h1>Show Page</h1>
+<h1><%=@habit.description%></h1>
 
-<%=@habit.description%>
 
+<br>
 <% if @day %>
-  <%=@day.day%>
+  <h3>Here are the days you've completed this habit:</h3> <br>
+  <%=@day.day%> 
 <%else%>
   <h3>Looks like this habit isn't being tracked yet!</h3>
 <%end%>
-
+<br> <br>
 <% if current_user == @habit.user %>
   <a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
-  <form action="/habit/<%=@habit.id%>" method="post">
+  <form action="/habit/<%=@habit.id%>" method="post"> <br>
   <input type="hidden" name="_method" value="Delete">
   <input type="submit" name='' value="Delete this Entry."> 
   </form>
