@@ -4,7 +4,9 @@
 <br>
 <% if @day %>
   <h3>Here are the days you've completed this habit:</h3> <br>
-  <%=@day.day%> 
+  <%@day.each do |day|%>
+    <%=day.day%><br>
+  <%end%>
 <%else%>
   <h3>Looks like this habit isn't being tracked yet!</h3>
 <%end%>
