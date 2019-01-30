@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190114213643) do
+ActiveRecord::Schema.define(version: 20190130123249) do
+
+  create_table "days", force: :cascade do |t|
+    t.string   "day"
+    t.integer  "habit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "habits", force: :cascade do |t|
     t.string   "description"
