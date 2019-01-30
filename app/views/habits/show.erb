@@ -2,6 +2,9 @@
 
 <%=@habit.description%>
 
+<%=@day.day%>
+#need to update to iterate over multiple days
+
 <% if current_user == @habit.user %>
   <a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
   <form action="/habit/<%=@habit.id%>" method="post">
