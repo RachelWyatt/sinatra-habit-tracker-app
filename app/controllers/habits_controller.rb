@@ -15,7 +15,8 @@ class HabitsController < ApplicationController
     end
     if params[:description] != ""
       @habit = Habit.create(description: params[:description], user_id: current_user.id)
-      @day = Day.create(day: params[:day], habit_id: @habit.id)
+      @day = Day.create(day: params[:date], habit_id: @habit.id)
+      binding.pry
       redirect "/habit/#{@habit.id}"
     else 
       redirect "/habits/new"
