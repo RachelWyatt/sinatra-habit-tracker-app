@@ -14,11 +14,12 @@ class HabitsController < ApplicationController
       redirect '/'
     end
     if params[:description] != ""
+      flash[:message] = "Your habit was successfully started!"
       @habit = Habit.create(description: params[:description], user_id: current_user.id)
       @day = Day.create(day: params[:date], habit_id: @habit.id)
-      binding.pry
       redirect "/habit/#{@habit.id}"
     else 
+      flash[:message] = "There was an error."
       redirect "/habits/new"
     end
   end
