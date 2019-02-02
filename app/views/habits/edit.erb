@@ -4,9 +4,10 @@
 
 <form action="/habits/<%=@habit.id%>" method="post">
 <input type="hidden" name="_method" value="patch">
-<label for="description">Description:</label>
+<label for="description">Edit Habit Description:</label>
 <input type="text" name="description" value="<%=@habit.description%>"> <br>
-<label for="day">Day:</label>
+<h5>AND/OR:</h5>
+<label for="day">Add a day you completed the habit:</label>
 <input type="date" name="day"> <br>
-<input type="submit" value="Edit"> 
+<input type="submit" value="Submit"> 
 </form>

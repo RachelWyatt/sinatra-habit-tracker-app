@@ -9,7 +9,7 @@
 
 <h4><% @habits.each do |habit| %></h4>
 <% if current_user == habit.user %>
-  <p><a href="/habit/<%=habit.id%>"> <%=habit.description%> </a></p>
+  <p><a href="/habits/<%=habit.id%>"> <%=habit.description%> </a></p>
   <br>
   <%end%>
 <% end %>

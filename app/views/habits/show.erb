@@ -13,7 +13,7 @@
 <br> <br>
 <% if current_user == @habit.user %>
   <a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
-  <form action="/habit/<%=@habit.id%>" method="post"> <br>
+  <form action="/habits/<%=@habit.id%>" method="post"> <br>
   <input type="hidden" name="_method" value="Delete">
   <input type="submit" name='' value="Delete this Entry."> 
   </form>
