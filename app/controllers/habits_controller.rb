@@ -26,11 +26,8 @@ class HabitsController < ApplicationController
     redirect_if_not_logged_in
      find_habit
      @day = @habit.days
-     #Day.find_by(habit_id: params[:id])
     erb :'habits/show'
   end
-  
-  #index route for all habits
   
   get "/habits/:id/edit" do 
     find_habit
@@ -47,7 +44,7 @@ class HabitsController < ApplicationController
     redirect_if_not_logged_in
       if @habit.user == current_user && params[:description] != ''
         @habit.update(id: params[:id], description: params[:description])
-        @day= Day.create(day: params[:day], habit_id: @habit.id)
+        @day = Day.create(day: params[:day], habit_id: @habit.id)
         redirect to "/habits/#{@habit.id}"
       else 
         redirect "users/#{current_user.id}"
