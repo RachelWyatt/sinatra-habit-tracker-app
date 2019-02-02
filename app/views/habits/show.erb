@@ -1,9 +1,9 @@
-<h1><%=@habit.description%></h1>
+<h1>Habit: <%=@habit.description%></h1>
 
 
 <br>
 <% if @day %>
-  <h3>Here are the days you've completed this habit:</h3> <br>
+  <h3>You've completed this habit <%=@day.count%> times! Here are the days you've completed this habit:</h3> <br>
   <%@day.each do |day|%>
     <%=day.day%><br>
   <%end%>
