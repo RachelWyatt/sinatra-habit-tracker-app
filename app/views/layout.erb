@@ -23,11 +23,17 @@
 
       <%end%>
       
+
+    </div>
+    <div class="wrapper">
+      
       <% if flash[:message] %>
         <h3><%=flash[:message]%></h3>
       <%end%>
-    </div>
-    <div class="wrapper">
+      
+     <% if flash[:error] %>
+        <h3><%=flash[:error]%></h3>
+      <%end%>
 
         <%= yield %>
 
