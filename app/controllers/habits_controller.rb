@@ -15,14 +15,15 @@ class HabitsController < ApplicationController
       flash[:message] = "Your habit was successfully started!"
       @habit = Habit.create(description: params[:description], user_id: current_user.id)
       @day = Day.create(day: params[:day], habit_id: @habit.id)
-      redirect "/habit/#{@habit.id}"
+      redirect "/habits/#{@habit.id}"
     else 
       flash[:message] = "There was an error."
       redirect "/habits/new"
     end
   end
   
-  get "/habit/:id" do
+  get "/habits/:id" do
+    redirect_if_not_logged_in
      find_habit
      @day = @habit.days
      #Day.find_by(habit_id: params[:id])
@@ -47,13 +48,13 @@ class HabitsController < ApplicationController
       if @habit.user == current_user && params[:description] != ''
         @habit.update(id: params[:id], description: params[:description])
         @day= Day.create(day: params[:day], habit_id: @habit.id)
-        redirect to "/habit/#{@habit.id}"
+        redirect to "/habits/#{@habit.id}"
       else 
         redirect "users/#{current_user.id}"
       end 
   end
   
-  delete '/habit/:id' do 
+  delete '/habits/:id' do 
     find_habit
     if current_user == @habit.user 
       @habit.destroy
