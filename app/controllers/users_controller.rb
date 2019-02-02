@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id 
       redirect "/users/#{@user.id}"
     else
-      flash[:message] = "Your credentials were invalid. Please sign up or try again."
+      flash[:error] = "Your credentials were invalid. Please sign up or try again."
       redirect "/login"
     end
   end
@@ -20,11 +20,12 @@ class UsersController < ApplicationController
   end
   
   post '/users' do 
-    if params[:name] !='' && params[:email] !='' && params[:password] !=''
-      @user = User.create(params)
+    @user = User.new(params)
+    if @user.save
       session[:user_id] = @user.id 
       redirect "/users/#{@user.id}"
     else
+      flash[:error] = "Account creation failure: #{@user.errors.full_messages.to_sentence}"
       redirect '/signup'
     end
   end
