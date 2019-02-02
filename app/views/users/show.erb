@@ -4,9 +4,6 @@
 
 <%if @user.habits != [] %>
 <h2>What have you been up to recently?</h2>
-
-
-
 <h4><% @habits.each do |habit| %></h4>
 <% if current_user == habit.user %>
   <p><a href="/habits/<%=habit.id%>"> <%=habit.description%> </a></p>
