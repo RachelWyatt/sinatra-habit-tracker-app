@@ -4,6 +4,10 @@ A simple Sinatra CRUD App that allows a user to create new habits and track whic
 ##Getting Started
 To run this app, clone the repo and run bundle install. Then run shotgun to start up a server. You should see the app running on localhost:9393.
 
+## Contributing
+
+Feel free to contribute!  Please fork, clone, and submit a PR if you like!
+
 ##License
 This project is licensed under the MIT License:
 

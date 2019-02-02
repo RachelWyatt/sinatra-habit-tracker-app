@@ -31,21 +31,22 @@ Specs:
    User can create, read, update, and destroy journal entry.
 
 
-- [ ] Ensure that users can't modify content created by other users
+- [X] Ensure that users can't modify content created by other users
   
-  Set this up so that a user can only view his or her habits??
+  A logged in user can only edit and delete his or her habits.
 
 
-- [ ] Include user input validations
-
-
-
-- [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+- [X ] Include user input validations
+  A habit can't be created with blank input, and during sign up the presence of Name, Email, and Password are validated.
 
 
 
-- [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+- [X ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+  When a user has an error signing in, ActiveRecord tells them the error.
 
+
+- [X ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+  Yes
 
 
 - [x] You have a large number of small Git commits
