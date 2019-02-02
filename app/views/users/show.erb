@@ -1,7 +1,11 @@
 <h1>User Show Page</h1>
 <h1>Welcome, <%=@user.name%>.</h1>
 
+
+<%if @user.habits != [] %>
 <h2>What have you been up to recently?</h2>
+
+
 
 <h4><% @habits.each do |habit| %></h4>
 <% if current_user == habit.user %>
@@ -12,3 +16,8 @@
 
 <h2>Or get started on something new:</h2>
 <a href="/habits/new">Start a New Habit</a>
+
+<%else%>
+<h2>It looks like you haven't started any habits yet!</h2>
+<a href="/habits/new">Start a New Habit</a>
+<%end%>
