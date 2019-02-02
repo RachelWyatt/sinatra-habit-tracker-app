@@ -10,9 +10,7 @@ class HabitsController < ApplicationController
   end
 
   post '/habits' do
-    if !logged_in?
-      redirect '/'
-    end
+    redirect_if_not_logged_in
     if params[:description] != ""
       flash[:message] = "Your habit was successfully started!"
       @habit = Habit.create(description: params[:description], user_id: current_user.id)
@@ -25,7 +23,7 @@ class HabitsController < ApplicationController
   end
   
   get "/habit/:id" do
-    find_habit
+     find_habit
      @day = @habit.days
      #Day.find_by(habit_id: params[:id])
     erb :'habits/show'
@@ -35,20 +33,17 @@ class HabitsController < ApplicationController
   
   get "/habits/:id/edit" do 
     find_habit
-    if logged_in?
+    redirect_if_not_logged_in
       if @habit.user == current_user
         erb :"/habits/edit"
       else 
         redirect "users/#{current_user.id}"
       end
-    else 
-      redirect '/'
-    end
   end
   
   patch "/habits/:id" do
     find_habit
-    if logged_in?
+    redirect_if_not_logged_in
       if @habit.user == current_user && params[:description] != ''
         @habit.update(id: params[:id], description: params[:description])
         @day= Day.create(day: params[:day], habit_id: @habit.id)
@@ -56,9 +51,6 @@ class HabitsController < ApplicationController
       else 
         redirect "users/#{current_user.id}"
       end 
-    else 
-      redirect '/'
-    end
   end
   
   delete '/habit/:id' do 
