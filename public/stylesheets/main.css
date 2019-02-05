@@ -18,22 +18,24 @@
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
+    background-color: #FBE8A6;
   }
 
 
   h1 {
     font-size: 36px;
     line-height: 54px;
-    color: white;
     margin-top: 4pt;
     margin-bottom: 6pt;
+    color:#8DD0D9;
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
+    color: #404040;
+    
   }
 
   h3 {
@@ -52,8 +54,22 @@
   .content {
     float: left;
     width: 60%; /* 480px / 800px */
+
+  }
+  
+   .wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
   }
 
+  .nav {
+    text-align: right;
+  }
 }
 
 
@@ -91,27 +107,44 @@ input[type=button], input[type=submit], input[type=reset] {
   cursor: pointer;
 }
 
-/* link styles */
+/* --link styles-- */
 a:link {
-    display: block;
-    width: 200px;
-    padding:15px;
-    margin-top: 10px;
-    margin-left: 40px;
-    margin-right: 40px;
-    color: white;
-    text-decoration: none;
-    font-size: 16pt;
-    border: 3px solid white;
-    border-radius: 20px;
+  display: inline-block;
+  color: #f4976C;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 50px 10px 50px;
+  border: 2px solid;
+  margin: 5px;
+  
 }
 
 a:visited {
+  display: inline-block;
   color: #f06e34;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 50px 10px 50px;
   border: 2px solid;
+  margin: 5px;
+}
+
+.list a:link {
+  color: #f4976C;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0px;
+  border: none;
+  margin: 0px;
+}
+
+.list a:visited {
+  color: #f06e34;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0px;
+  border: none;
+  margin: 0px;
 }
 
 /*Welcome page styles*/
@@ -131,8 +164,18 @@ a:visited {
 }
 
 
-.welcome li {
-  display: inline-block;
+.welcome li a {
+    display: block;
+    width: 200px;
+    padding:15px;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 16pt;
+    border: 3px solid white;
+    border-radius: 20px;
 }
 
 

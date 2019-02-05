@@ -1,21 +1,23 @@
-<div class=""
-<h1>User Show Page</h1>
+<div class="wrapper">
+
 <h1>Welcome, <%=@user.name%>.</h1>
 
 
 <%if @user.habits != [] %>
-<h2>What have you been up to recently?</h2>
-<h4><% @habits.each do |habit| %></h4>
+<h2>Click on an existing habit below to add a day you completed it:</h2>
+<% @habits.each do |habit| %>
 <% if current_user == habit.user %>
-  <p><a href="/habits/<%=habit.id%>"> <%=habit.description%> </a></p>
+  <div class="list"><a href="/habits/<%=habit.id%>"> <%=habit.description%> </a></div>
   <br>
   <%end%>
 <% end %>
 
 <h2>Or get started on something new:</h2>
-<a href="/habits/new">Start a New Habit</a> or <a href="/habits">Get inspiration from others!</a>
+<div class="list"><a href="/habits/new">Start a New Habit</a> or <a href="/habits">Get inspiration from others!</a></div>
 
 <%else%>
 <h2>It looks like you haven't started any habits yet!</h2>
-<a href="/habits/new">Start a New Habit</a> or <a href="/habits">Get inspiration from others!</a>
+<div class="list"><a href="/habits/new">Start a New Habit</a> or <a href="/habits">Get inspiration from others!</a></div>
 <%end%>
+
+</div>
