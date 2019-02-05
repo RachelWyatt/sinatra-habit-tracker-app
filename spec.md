@@ -63,3 +63,7 @@ Specs:
 
 - [x] You don't include changes in a commit that aren't related to the commit message
   Yes
+
+Goals:
+-Create validation so that a user can't edit a habit with a blank date 
+-Create a link on the habits index page so that a user can directly go to the page to start that habit
