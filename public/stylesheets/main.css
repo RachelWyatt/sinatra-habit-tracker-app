@@ -34,7 +34,7 @@
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
-    color: #404040;
+    color: 	#484848;
     
   }
 
@@ -98,13 +98,15 @@ input {
 }
 
 input[type=button], input[type=submit], input[type=reset] {
-  background-color: #f4976c;
-  border: none;
-  color: white;
-  padding: 16px 32px;
+  display: inline-block;
+  color: #f4976C;
   text-decoration: none;
-  margin: 4px 2px;
+  font-weight: bold;
+  padding: 10px 50px 10px 50px;
+  border: 2px solid;
+  margin: 5px;
   cursor: pointer;
+  background-color: white;
 }
 
 /* --link styles-- */

@@ -10,8 +10,9 @@ class HabitsController < ApplicationController
   end
 
   post '/habits' do
+
     redirect_if_not_logged_in
-    if params[:description] != ""
+    if params[:description] != "" 
       flash[:message] = "Your habit was successfully started!"
       @habit = Habit.create(description: params[:description], user_id: current_user.id)
       @day = Day.create(day: params[:day], habit_id: @habit.id)

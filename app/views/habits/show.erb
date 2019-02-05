@@ -3,20 +3,20 @@
 
 
 <br>
-<% if @day %>
+<% if @day.count > 0 %>
   <h3>You've completed this habit <%=@day.count%> times! Here are the days you've completed this habit:</h3> <br>
   <%@day.each do |day|%>
     <%=day.day%><br>
   <%end%>
 <%else%>
-  <h3>Looks like this habit isn't being tracked yet!</h3>
+  <h3>Looks like this habit isn't being tracked yet! Click "Edit Habit" below to add a day you've completed this.</h3>
 <%end%>
 <br> <br>
 <% if current_user == @habit.user %>
   <a href="/habits/<%=@habit.id%>/edit">Edit Habit</a>
   <form action="/habits/<%=@habit.id%>" method="post"> <br>
   <input type="hidden" name="_method" value="Delete">
-  <input type="submit" name='' value="Delete this Entry."> 
+  <input type="submit" name='' value="Delete Habit"> 
   </form>
 <% end %>
 </div>
