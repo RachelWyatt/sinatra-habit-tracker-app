@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic SC');
 @media screen {
   /* --- Reset Styles --- */
   * {
@@ -18,16 +19,16 @@
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
-    background-color: #FBE8A6;
+    background-color: white;
   }
 
 
   h1 {
-    font-size: 36px;
     line-height: 54px;
     margin-top: 4pt;
     margin-bottom: 6pt;
-    color:#8DD0D9;
+    color:#303C6C;
+    font-family: 'Amatic SC' ;font-size: 90px;
   }
 
   h2 {
@@ -39,8 +40,8 @@
   }
 
   h3 {
-    font-size: 18px;
     line-height: 36px;
+    color: #303C6C;
   }
 
   p {
@@ -65,6 +66,7 @@
     margin: 16px auto;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+    height: 100%;
   }
 
   .nav {
@@ -150,20 +152,23 @@ a:visited {
 }
 
 /*Welcome page styles*/
-.landing {
-    width: 100vw;
-    height: 100vh;
+.banner {
+    width: 100%;
+
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: linear-gradient(to bottom, #f4976c, #f7ac74, #f8c181, #fad592, #fbe8a6);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
+    background-color: #B4DFE5;
     font-size: 16pt;
+    display: table;
+    padding: 5% 0;
 }
+
+bigtext  {
+padding: 10% 0
+}
+
+
 
 
 .welcome li a {
@@ -178,6 +183,7 @@ a:visited {
     font-size: 16pt;
     border: 3px solid white;
     border-radius: 20px;
+    justify-content: center;
 }
 
 
