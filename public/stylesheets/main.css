@@ -19,7 +19,7 @@
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
-    background-color: white;
+    background-color:white;
   }
 
 
@@ -60,9 +60,6 @@
   
    .wrapper {
     background: #fff;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
     margin: 16px auto;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
@@ -71,6 +68,7 @@
 
   .nav {
     text-align: right;
+    background-color: #B4DFE5;
   }
 }
 
@@ -151,7 +149,16 @@ a:visited {
   margin: 0px;
 }
 
-/*Welcome page styles*/
+.nav a{
+  color: #f4976C;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0px;
+  border: none;
+  margin: 0px;
+}
+
+/*Banner style*/
 .banner {
     width: 100%;
 
@@ -161,30 +168,10 @@ a:visited {
     background-color: #B4DFE5;
     font-size: 16pt;
     display: table;
-    padding: 5% 0;
-}
-
-bigtext  {
-padding: 10% 0
+    padding: 2.5% 0;
 }
 
 
-
-
-.welcome li a {
-    display: block;
-    width: 200px;
-    padding:15px;
-    margin-top: 10px;
-    margin-left: 40px;
-    margin-right: 40px;
-    color: white;
-    text-decoration: none;
-    font-size: 16pt;
-    border: 3px solid white;
-    border-radius: 20px;
-    justify-content: center;
-}
 
 
 
