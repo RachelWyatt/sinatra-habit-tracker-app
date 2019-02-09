@@ -3,8 +3,11 @@
 <div class="wrapper">
 <h2>Here are some habits other users are trying:</h2>
 
+
 <h4><% @habits.each do |habit| %></h4>
+  <% if habit.user %>
   <p><%=habit.description%> — <%=habit.user.name%> </p>
+  <%end%>
 <% end %>
 
 <a href="/habits/new">Get started on something new!</a> 

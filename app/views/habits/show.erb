@@ -3,7 +3,7 @@
 
 <div class="wrapper">
 <% if @day.count > 0 %>
-  <h3>You've completed this habit <%=@day.count%> times! Here are the days you've completed this habit:</h3> <br>
+  <h3>You've completed this habit <%=@day.count%> time(s)! Here are the days you've completed this habit:</h3> <br>
   <%@day.each do |day|%>
     <%=day.day%><br>
   <%end%>
