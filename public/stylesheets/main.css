@@ -71,6 +71,10 @@
     text-align: right;
     background-color: #B4DFE5;
   }
+  
+  .center {
+  text-align: center;
+  }
 }
 
 
@@ -111,15 +115,13 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 
 /* --link styles-- */
+
 a:link {
-  display: inline-block;
   color: #f4976C;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 50px 10px 50px;
   border: 2px solid;
-  margin: 5px;
-  
 }
 
 a:visited {
@@ -171,6 +173,7 @@ a:visited {
     display: table;
     padding: 2.5% 0;
 }
+
 
 
 
