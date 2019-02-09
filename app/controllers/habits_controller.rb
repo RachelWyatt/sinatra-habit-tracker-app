@@ -10,7 +10,6 @@ class HabitsController < ApplicationController
   end
 
   post '/habits' do
-
     redirect_if_not_logged_in
     if params[:description] != "" 
       flash[:message] = "Your habit was successfully started!"
