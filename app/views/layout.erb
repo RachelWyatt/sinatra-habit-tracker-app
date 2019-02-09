@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-  
+        <% if flash[:message] %>
+        <h3><%=flash[:message]%></h3>
+      <%end%>
     
     <div class="nav">
       <% if logged_in? %>
-      <a href="/">Home</a>
+      <a href="/">Home</a><br>
       <a href="/logout">Log Out</a>
 
       <%end%>
@@ -26,14 +28,7 @@
 
     </div>
     <div>
-      
-      <% if flash[:message] %>
-        <h3><%=flash[:message]%></h3>
-      <%end%>
-      
-     <% if flash[:error] %>
-        <h3><%=flash[:error]%></h3>
-      <%end%>
+
 
         <%= yield %>
 
