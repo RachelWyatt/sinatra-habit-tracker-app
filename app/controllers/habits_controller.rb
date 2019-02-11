@@ -26,8 +26,15 @@ class HabitsController < ApplicationController
   get "/habits/:id" do
     redirect_if_not_logged_in
      find_habit
-     @day = @habit.days
-    erb :'habits/show'
+
+     if @habit
+#       find_habit
+        @day = @habit.days
+       erb :'habits/show'
+     else
+       flash[:message] = "That habit doesn't exist yet!"
+       redirect "/users/#{current_user.id}"
+     end
   end
 
   get "/habits/:id/edit" do
@@ -66,7 +73,6 @@ class HabitsController < ApplicationController
   end
 
   def find_habit
-    @habit = Habit.find(params[:id])
+    @habit = Habit.find_by_id(params[:id])
   end
-
 end
