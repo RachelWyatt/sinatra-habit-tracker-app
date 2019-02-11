@@ -1,27 +1,19 @@
-
 <div class="banner"><h1>Welcome, <%=@user.name%>.</h1></div>
 
 <div class="wrapper">
-
 <%if @user.habits != [] %>
-<h2>Click on an existing habit below to add a day you completed it:</h2>
-<% @habits.each do |habit| %>
-<% if current_user == habit.user %>
-  <div class="list"><div class="center"><a href="/habits/<%=habit.id%>"> <%=habit.description%> </a></div></div>
-  <br>
-  <%end%>
-<% end %>
+  <h2>Click on an existing habit below to add a day you completed it:</h2>
+  <% @habits.each do |habit| %>
+      <% if current_user == habit.user %>
+        <div class="list"><a href="/habits/<%=habit.id%>"> <%=habit.description%> </a></div><br>
+      <%end%>
+    <% end %>
 
 <h2>Or get started on something new:</h2>
-<div class="list">
-<div class="center">
-<a href="/habits/new">Start a New Habit</a> or <a href="/habits">Get inspiration from others!</a>
-</div>
-</div>
+<div class="list"><a href="/habits/new">Start a New Habit</a> or <a href="/habits">Get inspiration from others!</a></div>
 
 <%else%>
 <h2>It looks like you haven't started any habits yet!</h2>
 <div class="list"><a href="/habits/new">Start a New Habit</a> or <a href="/habits">Get inspiration from others!</a></div>
 <%end%>
-
 </div>
