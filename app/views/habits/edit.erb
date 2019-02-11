@@ -1,16 +1,15 @@
-
 <div class="banner"><h1>Edit Your Habit:</h1></div>
-
 
 <div class="wrapper">
 <form action="/habits/<%=@habit.id%>" method="post">
 <input type="hidden" name="_method" value="patch">
 <label for="description">Edit Habit Description:</label>
 <input type="text" name="description" value="<%=@habit.description%>"> <br>
+
 <h5>AND/OR:</h5>
+
 <label for="day">Add a day you completed the habit:</label>
 <input type="date" name="day"> <br>
-<input type="submit" value="Submit"> 
+<input type="submit" value="Submit">
 </form>
-
 </div>
