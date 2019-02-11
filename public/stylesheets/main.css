@@ -13,7 +13,7 @@
   }
 
   /* --- Welcome Page Styles --- */
-  
+
 
   body {
     color: #333;
@@ -59,7 +59,7 @@
     width: 60%; /* 480px / 800px */
 
   }
-  
+
    .wrapper {
     background: #fff;
     margin: 16px auto;
@@ -73,9 +73,13 @@
     padding: 5px 5px 5px 20px;
     text-align: left;
   }
-  
+
   .center {
   text-align: center;
+  }
+
+  .welcome {
+    display: inline-block;
   }
 }
 
@@ -119,6 +123,7 @@ input[type=button], input[type=submit], input[type=reset] {
 /* --link styles-- */
 
 a:link {
+  display: inline-block;
   color: #f4976C;
   text-decoration: none;
   font-weight: bold;
