@@ -26,9 +26,7 @@ class HabitsController < ApplicationController
   get "/habits/:id" do
     redirect_if_not_logged_in
      find_habit
-
      if @habit
-#       find_habit
         @day = @habit.days
        erb :'habits/show'
      else
